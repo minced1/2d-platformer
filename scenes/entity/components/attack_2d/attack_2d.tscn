@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwtx1upm0qiih"]
+
+[ext_resource type="Script" path="res://scenes/entity/components/attack_2d/attack_2d.gd" id="1_evr3h"]
+
+[node name="Attack" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_evr3h")

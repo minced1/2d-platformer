@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg60ftu74l8ac"]
+
+[ext_resource type="Script" path="res://scenes/damagezone/damagezone.gd" id="1_6kqpo"]
+
+[node name="Damagezone" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_6kqpo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
