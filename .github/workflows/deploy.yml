@@ -16,7 +16,7 @@ jobs:
       contents: write
 
     container:
-      image: abarichello/godot-ci@4.2.2-stable
+      image: barichello/godot-ci:4.2.2
 
     steps:
       - name: Checkout
