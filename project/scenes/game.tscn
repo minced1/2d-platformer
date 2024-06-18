@@ -435,7 +435,8 @@ sources/0 = SubResource("TileSetAtlasSource_mq578")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_idp5w"]
 
 [sub_resource type="Animation" id="Animation_1froq"]
-length = 0.001
+length = 2.0
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -443,10 +444,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(257, -28)]
+"values": [Vector2(656, 356), Vector2(560, 356)]
 }
 
 [sub_resource type="Animation" id="Animation_aeelg"]
@@ -479,22 +480,21 @@ unique_name_in_owner = true
 script = ExtResource("1_flxld")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 102.0
-offset_top = -257.0
-offset_right = 233.0
-offset_bottom = -234.0
+offset_left = 406.0
+offset_top = 127.0
+offset_right = 537.0
+offset_bottom = 150.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("8_855un")
 theme_override_font_sizes/font_size = 8
 text = "You've collected X coins"
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
-visible = false
 
 [node name="ProgressBar" type="ProgressBar" parent="GameManager/CanvasLayer"]
-visible = false
 z_index = 10
 anchors_preset = -1
 anchor_right = 0.0625
@@ -514,6 +514,7 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(304, 384)
 tile_set = SubResource("TileSet_agg7l")
 format = 2
 layer_0/name = "Back"
@@ -522,60 +523,61 @@ layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(131072, 0, 0, 131073, 0, 0, 131074, 0, 1, 3, 0, 0, 4, 0, 0, 65538, 0, 0, 5, 0, 0, -196603, 0, 0, -196602, 0, 0, -262137, 0, 0, -262136, 0, 0, 6, 393216, 0, 65543, 393216, 0, 131080, 393216, 0, 131081, 393216, 0, 131085, 393216, 0, 131086, 393216, 0, 131089, 393216, 0, 131090, 393216, 0, 131082, 589824, 0, 131083, 655360, 0, 131084, 720896, 0, -262135, 589824, 0, -262134, 720896, 0, -262133, 262144, 0, -262132, 262144, 0, -131058, 262144, 0, -393201, 458752, 1, -458736, 458752, 1, -458735, 458752, 1, -524270, 458752, 1, -524269, 458752, 1, -327665, 393216, 1, -393200, 393216, 1, -393199, 393216, 1, -458734, 393216, 1, -458732, 393216, 1, -458733, 524288, 1, -393197, 393216, 1, -393198, 524288, 0, -327663, 393216, 1, -327664, 524288, 1, -131060, 262144, 1, -131059, 262144, 1, -65523, 262144, 1, -196601, 0, 1, -196600, 0, 1, -131064, 0, 1, 65539, 0, 1, 131075, 65536, 0, 131076, 0, 1, 65540, 65536, 0, 65541, 0, 1, 131077, 0, 1, 196612, 65536, 1, 196611, 0, 1, 196610, 0, 1, 196609, 65536, 0, 196608, 0, 1, 65542, 393216, 1, 131078, 524288, 1, 196614, 393216, 1, 196615, 524288, 0, 131079, 393216, 1, 196613, 393216, 1, 196616, 393216, 1, 196617, 393216, 1, 196621, 393216, 1, 196622, 393216, 1, 196625, 393216, 1, 196626, 393216, 1, 262161, 393216, 1, 262162, 393216, 1, 262157, 393216, 1, 262158, 393216, 1, 262153, 393216, 1, 262152, 393216, 1, 262151, 393216, 1, 262150, 393216, 1, 262149, 393216, 1, 262148, 393216, 1, 262147, 0, 1, 262146, 0, 1, 262145, 0, 1, 262144, 0, 1, -196595, 262144, 0, -196596, 262144, 1, -196597, 262144, 1, -327672, 0, 5, -393208, 0, 4, -458744, 0, 4, -524280, 0, 3, 65537, 65536, 6, -327668, 327680, 5, -393204, 327680, 4, -458740, 327680, 3, -196594, 327680, 7, -786424, 393216, 2, -851959, 458752, 0, -786423, 393216, 2, -851958, 458752, 0, -786422, 393216, 2, -720886, 393216, 2, -851957, 458752, 0, -786421, 393216, 2, -720885, 393216, 2, -851956, 458752, 0, -786420, 393216, 2, -720884, 393216, 2, -786419, 458752, 0, -786418, 458752, 0, -65532, 262144, 8, 65550, 458752, 4, -131049, 131072, 0, -65513, 131072, 1, -196584, 131072, 0, -131048, 131072, 1, -65512, 196608, 0, -196583, 131072, 0, -131047, 196608, 0, -65511, 131072, 1, -196582, 131072, 0, -131046, 131072, 1, -65510, 131072, 1, -196581, 131072, 1, -131045, 131072, 1, -65509, 196608, 1, -196580, 131072, 0, -131044, 131072, 1, -65508, 131072, 1, -131043, 196608, 0, -65507, 131072, 1, -65506, 131072, 1, -65505, 131072, 1, -196576, 131072, 0, -131040, 131072, 1, -196575, 131072, 0, -131039, 131072, 1, 23, 131072, 1, 24, 131072, 1, -589797, 131072, 4, -458725, 196608, 8, -393189, 196608, 7, -327653, 131072, 8, -262117, 131072, 0, 29, 196608, 1, 30, 131072, 1, 31, 131072, 1, -65504, 131072, 1, -65503, 196608, 0, -196574, 131072, 0, -131038, 131072, 1, -65502, 131072, 1, -262109, 131072, 0, -196573, 131072, 1, -131037, 196608, 1, -524252, 131072, 4, -393180, 196608, 7, -327644, 196608, 8, -262108, 131072, 0, -196572, 131072, 1, -131036, 131072, 1, -196579, 131072, 0, -196578, 131072, 0, -196577, 131072, 0, -131042, 131072, 1, -131041, 131072, 1, 196607, 0, 0, 196606, 0, 0, 196605, 0, 0, 262141, 0, 1, 327677, 0, 1, 327678, 0, 1, 262142, 0, 1, 262143, 0, 1, 327679, 0, 1, 196604, 0, 0, 196603, 0, 0, 196602, 0, 0, 196601, 0, 0, 196600, 0, 0, 196599, 0, 0, 196598, 0, 0, 196597, 0, 0, 196596, 0, 0, 196595, 0, 0, 196594, 0, 0, 196593, 0, 0, 196592, 0, 0, 196591, 0, 0, 196590, 0, 0, 196589, 0, 0, 262125, 0, 1, 262126, 0, 1, 262127, 0, 1, 262128, 0, 1, 262129, 0, 1, 262130, 0, 1, 262131, 0, 1, 262132, 0, 1, 262133, 0, 1, 262134, 0, 1, 262135, 0, 1, 262136, 0, 1, 262137, 0, 1, 262138, 0, 1, 262139, 0, 1, 327676, 0, 1, 327675, 0, 1, 327674, 0, 1, 327673, 0, 1, 327672, 0, 1, 327671, 0, 1, 327670, 0, 1, 327669, 0, 1, 327668, 0, 1, 327667, 0, 1, 327666, 0, 1, 327665, 0, 1, 327664, 0, 1, 327663, 0, 1, 327662, 0, 1, 327661, 0, 1, 262140, 0, 1, -1, 589824, 0, -65535, 720896, 0, -65536, 655360, 0, 131064, 0, 0)
 
 [node name="Killzone" parent="." instance=ExtResource("5_p3wk2")]
-position = Vector2(96, 97)
+position = Vector2(400, 481)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 7)
 shape = SubResource("WorldBoundaryShape2D_idp5w")
 
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("4_h8v85")]
-position = Vector2(120, 8)
+position = Vector2(424, 392)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("4_h8v85")]
-position = Vector2(216, 24)
+position = Vector2(520, 408)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("4_h8v85")]
-position = Vector2(312, -136)
+position = Vector2(616, 248)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("4_h8v85")]
-position = Vector2(184, -216)
+position = Vector2(488, 168)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("4_h8v85")]
-position = Vector2(536, -56)
+position = Vector2(840, 328)
 
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("3_6hlrt")]
-position = Vector2(257, -28)
+position = Vector2(656, 356)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
 libraries = {
 "": SubResource("AnimationLibrary_js2ef")
 }
-autoplay = "move"
+autoplay = "RESET"
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("3_6hlrt")]
-position = Vector2(273, -155)
+position = Vector2(577, 229)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -141.0
-offset_top = -25.0
-offset_right = -27.0
-offset_bottom = -2.0
+offset_left = 163.0
+offset_top = 359.0
+offset_right = 277.0
+offset_bottom = 382.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_fspc3")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump."
+metadata/_edit_use_anchors_ = true
 
 [node name="Slime" parent="." instance=ExtResource("10_dj8s4")]
-position = Vector2(512, -60)
+position = Vector2(816, 324)
 
 [node name="Player" parent="." instance=ExtResource("9_yvp8d")]
-position = Vector2(-56, 20)
+position = Vector2(248, 404)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
-limit_bottom = 80
 limit_smoothed = true
 position_smoothing_enabled = true
