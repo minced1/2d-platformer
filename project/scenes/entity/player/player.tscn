@@ -620,7 +620,6 @@ shape = SubResource("CircleShape2D_hgrox")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_ofrt8")
 anim_player = NodePath("AnimationPlayer")
 parameters/conditions/is_dead = false
@@ -646,4 +645,3 @@ one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_flkty")
-bus = &"SFX"
